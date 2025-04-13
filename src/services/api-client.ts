@@ -7,7 +7,7 @@ const store = getDefaultStore();
 
 // Create base axios instance
 const apiClient: AxiosInstance = axios.create({
-  baseURL: "http://localhost:5004/api",
+  baseURL: "https://wembleyback-g3d7a0cqhacsfuhc.westus2-01.azurewebsites.net/api",
   headers: {
     'Content-Type': 'application/json',
   },
