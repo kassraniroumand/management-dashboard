@@ -1,5 +1,4 @@
 import { authAtom } from '@/model/atoms';
-import { ApiService } from '@/lib/api';
 import { getDefaultStore } from 'jotai';
 import { authService } from '@/services';
 
