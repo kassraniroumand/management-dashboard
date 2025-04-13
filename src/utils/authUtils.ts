@@ -25,6 +25,28 @@ export const login = async (email: string, password: string) => {
   }
 };
 
+export const refreshToken = async () => {
+  const currentAuth = store.get(authAtom);
+  const refreshTokenValue = currentAuth?.refreshToken;
+
+  if (!refreshTokenValue) {
+    return false;
+  }
+
+  try {
+    const response = await authService.refreshToken(refreshTokenValue);
+    store.set(authAtom, {
+      ...currentAuth,
+      token: response.token,
+      refreshToken: response.refreshToken
+    });
+    return true;
+  } catch (error) {
+    console.error("Token refresh failed", error);
+    return false;
+  }
+};
+
 // Logout function
 export const logout = () => {
   store.set(authAtom, null);
