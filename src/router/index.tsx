@@ -193,7 +193,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "login", // Remove leading slash
+    path: "auth/login", // Remove leading slash
     element: <Login />,
   },
   {
